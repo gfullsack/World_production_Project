@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>City Population</title>
+  <title>Tonnes</title>
 
   <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -19,6 +19,13 @@
 
 <body>
   <!-- The div where we will inject our map -->
+  <select id="selDataset" onchange="optionChanged(this.value)">
+    <option value="Y1961">Y1961</option>
+    <option value="Y1962">Y1962</option>
+    <option value="Y1963">Y1963</option>
+    <option value="Y1964">Y1964</option>
+    <option value="Y1965">Y1965</option>
+  </select>
   <div id="map"></div>
 
   <!-- API key -->
