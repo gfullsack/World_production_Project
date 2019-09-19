@@ -39,11 +39,40 @@ d3.csv("Clean_Alcoholic_Beverages_df.csv")
 
 
 // Loop through the cities array and create one marker for each city object
-for (var i = 0; i < Country_List.length; i++) {
+for (var i = 0; i < Country_List.length; i++)
+
+ // Conditionals for countries points
+ var color = "";
+ var points = countries[i].points;
+
+ 
+ if (countries[i].points > 60000) {
+   color = "blue";
+ }
+ else if (countries[i].points > 50000) {
+   color = "red";
+ }
+ else if (countries[i].points > 40000) {
+   color = "green";
+ }
+ else if (countries[i].points > 30000) {
+  color = "yellow";
+}
+else if (countries[i].points > 20000) {
+  color = "green";
+}
+ else {
+   color = "red";
+ }
+
+
+
+
+{
   L.circle(location[i], { // <- CHANGED THIS
     fillOpacity: 0.75,
     color: "white",
-    fillColor: "purple",
+    fillColor: color,
     // Setting our circle's radius equal to the output of our markerSize function
     // This will make our marker's size proportionate to its Tonnes
     radius: 1 + Country_Tonnes[i] * 100 // <- CHANGED THIS (took out markerSize)
