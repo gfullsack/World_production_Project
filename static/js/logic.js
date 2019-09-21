@@ -11,132 +11,132 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var layers = {
-  TWENTY_THOUSAND: new L.LayerGroup(),
-  TEN_THOUSAND: new L.LayerGroup(),
-  NINE_THOUSAND: new L.LayerGroup(),
-  EIGHT_THOUSAND: new L.LayerGroup(),
-  SEVEN_THOUSAND: new L.LayerGroup(),
-  SIX_THOUSAND: new L.LayerGroup(),
-  FIVE_THOUSAND: new L.LayerGroup(),
-  FOUR_THOUSAND: new L.LayerGroup(),
-  THREE_THOUSAND: new L.LayerGroup(),
-  TWO_THOUSAND: new L.LayerGroup(),
-  ONE_THOUSAND: new L.LayerGroup(),
-  GREATER_THEN_500: new L.LayerGroup(),
-  LESS_THEN_500: new L.LayerGroup()
-};
+// var layers = {
+//   TWENTY_THOUSAND: new L.LayerGroup(),
+//   TEN_THOUSAND: new L.LayerGroup(),
+//   NINE_THOUSAND: new L.LayerGroup(),
+//   EIGHT_THOUSAND: new L.LayerGroup(),
+//   SEVEN_THOUSAND: new L.LayerGroup(),
+//   SIX_THOUSAND: new L.LayerGroup(),
+//   FIVE_THOUSAND: new L.LayerGroup(),
+//   FOUR_THOUSAND: new L.LayerGroup(),
+//   THREE_THOUSAND: new L.LayerGroup(),
+//   TWO_THOUSAND: new L.LayerGroup(),
+//   ONE_THOUSAND: new L.LayerGroup(),
+//   GREATER_THEN_500: new L.LayerGroup(),
+//   LESS_THEN_500: new L.LayerGroup()
+// };
 
-// Create the map with our layers
+// // Create the map with our layers
 
-var map = L.map("map-id", {
-  center: [40.73, -74.0059],
-  zoom: 12,
-  layers: [
-    layers.TWENTY_THOUSAND,
-    layers.TEN_THOUSAND,
-    layers.NINE_THOUSAND,
-    layers.EIGHT_THOUSAND,
-    layers.SEVEN_THOUSAND,
-    layers.SIX_THOUSAND,
-    layers.FIVE_THOUSAND,
-    layers.FOUR_THOUSAND,
-    layers.THREE_THOUSAND,
-    layers.TWO_THOUSAND,
-    layers.ONE_THOUSAND,
-    layers.GREATER_THEN_500,
-    layers.LESS_THEN_500
-  ]
-});
+// var map = L.map("map-id", {
+//   center: [40.73, -74.0059],
+//   zoom: 12,
+//   layers: [
+//     layers.TWENTY_THOUSAND,
+//     layers.TEN_THOUSAND,
+//     layers.NINE_THOUSAND,
+//     layers.EIGHT_THOUSAND,
+//     layers.SEVEN_THOUSAND,
+//     layers.SIX_THOUSAND,
+//     layers.FIVE_THOUSAND,
+//     layers.FOUR_THOUSAND,
+//     layers.THREE_THOUSAND,
+//     layers.TWO_THOUSAND,
+//     layers.ONE_THOUSAND,
+//     layers.GREATER_THEN_500,
+//     layers.LESS_THEN_500
+//   ]
+// });
 
-//>20000
-//>10000
-//>9000
-//>8000
-//>7000
-//>6000
-//>5000
-//>4000
-//>3000
-//>2000
-//>1000
-//>500
-//<500
+// //>20000
+// //>10000
+// //>9000
+// //>8000
+// //>7000
+// //>6000
+// //>5000
+// //>4000
+// //>3000
+// //>2000
+// //>1000
+// //>500
+// //<500
 
-// Initialize all of the LayerGroups we'll be using
+// // Initialize all of the LayerGroups we'll be using
 
 
-// Add our 'lightmap' tile layer to the map
-lightmap.addTo(map);
+// // Add our 'lightmap' tile layer to the map
+// lightmap.addTo(map);
 
-// Create an overlays object to add to the layer control
-var overlays = {
-   "TWENTY_THOUSAND" : layers.TWENTY_THOUSAND,
-   "TWENTY_THOUSAND" : layers.TEN_THOUSAND,
-   "TWENTY_THOUSAND" : layers.NINE_THOUSAND,
-   "TWENTY_THOUSAND" : layers.EIGHT_THOUSAND,
-   "TWENTY_THOUSAND" : layers.SEVEN_THOUSAND,
-   "TWENTY_THOUSAND" : layers.SIX_THOUSAND,
-   "TWENTY_THOUSAND" : layers.FIVE_THOUSAND,
-   "TWENTY_THOUSAND" :  layers.FOUR_THOUSAND,
-   "TWENTY_THOUSAND" :  layers.THREE_THOUSAND,
-   "TWENTY_THOUSAND" :  layers.TWO_THOUSAND,
-   "TWENTY_THOUSAND" :  layers.ONE_THOUSAND,
-   "TWENTY_THOUSAND" :  layers.GREATER_THEN_500,
-   "TWENTY_THOUSAND" :  layers.LESS_THEN_500
-};
+// // Create an overlays object to add to the layer control
+// var overlays = {
+//    "TWENTY_THOUSAND" : layers.TWENTY_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.TEN_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.NINE_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.EIGHT_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.SEVEN_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.SIX_THOUSAND,
+//    "TWENTY_THOUSAND" : layers.FIVE_THOUSAND,
+//    "TWENTY_THOUSAND" :  layers.FOUR_THOUSAND,
+//    "TWENTY_THOUSAND" :  layers.THREE_THOUSAND,
+//    "TWENTY_THOUSAND" :  layers.TWO_THOUSAND,
+//    "TWENTY_THOUSAND" :  layers.ONE_THOUSAND,
+//    "TWENTY_THOUSAND" :  layers.GREATER_THEN_500,
+//    "TWENTY_THOUSAND" :  layers.LESS_THEN_500
+// };
 
-// Create a control for our layers, add our overlay layers to it
-L.control.layers(null, overlays).addTo(map);
+// // Create a control for our layers, add our overlay layers to it
+// L.control.layers(null, overlays).addTo(map);
 
-// Create a legend to display information about our map
-var info = L.control({
-  position: "bottomright"
-});
+// // Create a legend to display information about our map
+// var info = L.control({
+//   position: "bottomright"
+// });
 
-// When the layer control is added, insert a div with the class of "legend"
-info.onAdd = function() {
-  var div = L.DomUtil.create("div", "legend");
-  return div;
-};
-// Add the info legend to the map
-info.addTo(map);
+// // When the layer control is added, insert a div with the class of "legend"
+// info.onAdd = function() {
+//   var div = L.DomUtil.create("div", "legend");
+//   return div;
+// };
+// // Add the info legend to the map
+// info.addTo(map);
 
-// Initialize an object containing icons for each layer group
-//var icons = {
-//  COMING_SOON: L.ExtraMarkers.icon({
-//    icon: "ion-settings",
-//    iconColor: "white",
-//    markerColor: "yellow",
-//    shape: "star"
-//  }),
-//  EMPTY: L.ExtraMarkers.icon({
-//   icon: "ion-android-bicycle",
- //   iconColor: "white",
-//    markerColor: "red",
-//    shape: "circle"
-//  }),
-//  OUT_OF_ORDER: L.ExtraMarkers.icon({
-//    icon: "ion-minus-circled",
-//    iconColor: "white",
-//    markerColor: "blue-dark",
-//    shape: "penta"
-//  }),
-//  LOW: L.ExtraMarkers.icon({
-//    icon: "ion-android-bicycle",
-//    iconColor: "white",
- //   markerColor: "orange",
- //   shape: "circle"
- // }),
- // NORMAL: L.ExtraMarkers.icon({
- //   icon: "ion-android-bicycle",
- //   iconColor: "white",
- //   markerColor: "green",
- //   shape: "circle"
-//  })
-//};
+// // Initialize an object containing icons for each layer group
+// //var icons = {
+// //  COMING_SOON: L.ExtraMarkers.icon({
+// //    icon: "ion-settings",
+// //    iconColor: "white",
+// //    markerColor: "yellow",
+// //    shape: "star"
+// //  }),
+// //  EMPTY: L.ExtraMarkers.icon({
+// //   icon: "ion-android-bicycle",
+//  //   iconColor: "white",
+// //    markerColor: "red",
+// //    shape: "circle"
+// //  }),
+// //  OUT_OF_ORDER: L.ExtraMarkers.icon({
+// //    icon: "ion-minus-circled",
+// //    iconColor: "white",
+// //    markerColor: "blue-dark",
+// //    shape: "penta"
+// //  }),
+// //  LOW: L.ExtraMarkers.icon({
+// //    icon: "ion-android-bicycle",
+// //    iconColor: "white",
+//  //   markerColor: "orange",
+//  //   shape: "circle"
+//  // }),
+//  // NORMAL: L.ExtraMarkers.icon({
+//  //   icon: "ion-android-bicycle",
+//  //   iconColor: "white",
+//  //   markerColor: "green",
+//  //   shape: "circle"
+// //  })
+// //};
 
-// Load Data for the map 
+// // Load Data for the map 
 
 
 d3.json('/resources')
